@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/blackfyre/ms-graph-as-app.svg?style=flat-square)](https://scrutinizer-ci.com/g/blackfyre/ms-graph-as-app)
 [![Total Downloads](https://img.shields.io/packagist/dt/blackfyre/ms-graph-as-app.svg?style=flat-square)](https://packagist.org/packages/blackfyre/ms-graph-as-app)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This is a very basic way to query the MS Graph API as an application. Oauth2 isn't intended to be supported... ever. There are Socialite packages for that.
 
 ## Installation
 
@@ -14,12 +14,25 @@ You can install the package via composer:
 ```bash
 composer require blackfyre/ms-graph-as-app
 ```
+### Lumen
+
+You'll need to register the service provider in your `bootstrap/app.php`
+
+``` php
+$app->register(\Blackfyre\MsGraphAsApp\MsGraphAsAppServiceProvider::class);
+```
 
 ## Usage
 
-``` php
-// Usage description here
+### Lumen
+
+To use this package, anywhere in you app, just call:
+
+``` php 
+$graphInstance = app('ms-graph-as-app')->getGraph();
 ```
+This will land you with a preconfigured MS Graph instance, read more at https://github.com/microsoftgraph/msgraph-sdk-php
+
 
 ### Testing
 
