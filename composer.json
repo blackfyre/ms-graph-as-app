@@ -19,7 +19,6 @@
         "php": "^8.0",
         "ext-json": "*",
         "illuminate/support": "^8.0",
-        "league/oauth2-client": "^2.6",
         "microsoft/microsoft-graph": "^1.29"
     },
     "require-dev": {
